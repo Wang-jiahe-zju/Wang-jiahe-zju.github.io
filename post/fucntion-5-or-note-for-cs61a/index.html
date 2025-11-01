@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>Fucntion 5 | Note for CS61A | Somnus&#39; Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://Wang-jiahe-zju.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://Wang-jiahe-zju.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="Fucntion 5 | Note for CS61A | Somnus&#39; Blog » Feed" href="https://Wang-jiahe-zju.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://Wang-jiahe-zju.github.io/styles/main.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/typora-theme.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/custom.css" rel="stylesheet">
+    <!-- KaTeX 公式渲染支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/jquery.min.js"></script> -->
+  <script src="https://Wang-jiahe-zju.github.io/media/scripts/callout.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="Fucntion 5 | Note for CS61A"/>
+    <meta property="og:url" content="https://Wang-jiahe-zju.github.io/post/fucntion-5-or-note-for-cs61a/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Somnus&#39; Blog"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://Wang-jiahe-zju.github.io">Somnus&#39; Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://Wang-jiahe-zju.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://Wang-jiahe-zju.github.io/tag/Adqr79Kbsp/" class="tag">CS61A</a>
+            
+        </span>
+            <h1>Fucntion 5 | Note for CS61A</h1>
+            <span class="meta">
+            	Posted on
+              2025-10-30，4 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div id="toc" class="toc" style="position:sticky;top:100px;"></div>
+          </div>
+          <div class="col-lg-9 col-md-10 mx-auto">
+            <p>Search and inverse function<br>
+First class elements<br>
+Function Decorators</p>
+<!-- more -->
+<h2 id="search-fucntion">Search fucntion</h2>
+<p><code>search</code> search a value  <code>x</code> that make the function <code>f</code> return True.</p>
+<pre><code class="language-python">def search(f):
+    x=0
+    while 1:
+        if f(x):
+            return x
+        x += 1
+</code></pre>
+<p>For example, to find the first positive <code>x</code> make <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(x)=(x+1)(x-3)=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>:</p>
+<pre><code class="language-python">def positive(x):
+    return 0 == (x*x - 2*x -3)
+               
+&gt;&gt;&gt; search(positive)
+3
+</code></pre>
+<p>This function only works for integer root.</p>
+<h2 id="inverse-function">Inverse function</h2>
+<p>An inverse function return <code>g(y)</code> such that <code>g(f(x))</code> get an <code>x</code>.</p>
+<p>Define <code>inverse</code> by using <code>search</code></p>
+<pre><code class="language-python">def inverse(f):
+    &quot;&quot;&quot;Return g(y) such that g(f(x)) → x.&quot;&quot;&quot;
+    return lambda y: search(lambda x: f(x) == y)
+
+def square(x):
+    return x * x
+
+sqrt = inverse(square)
+sqrt(256)
+</code></pre>
+<p><code>search(lambda x: f(x) == y)</code> means to find an <code>x</code> that makes the function which take an <code>x</code> and return <code>f(x) == y</code> return a True value. In this case, <code>f</code> equals the inverse function 's argument <code>square</code>, So we will find an <code>x</code> makes <code>square(x) == y</code> evaluated as True.</p>
+<p><code>lambda y: search(lambda x: f(x) == y)</code> means a function take take function <code>y</code> as argument, and return an <code>x</code> which makes <code>square(x) == y</code> evaluated as True.</p>
+<p>So that is the function <code>sqrt</code>, because <code>square(sqrt(y)) == y</code> is always True.</p>
+<p>Be aware that is only works for the even root too.</p>
+<h2 id="first-class-elements">First class elements</h2>
+<p>In general, programming languages impose restrictions on the ways in which computational elements can be manipulated. Elements with the fewest restrictions are said to have first-class status. Some of the &quot;rights and privileges&quot; of first-class elements are:</p>
+<ol>
+<li>They may be bound to names.</li>
+<li>They may be passed as arguments to functions.</li>
+<li>They may be returned as the results of functions.</li>
+<li>They may be included in data structures.</li>
+</ol>
+<p>Python awards functions full first-class status, and the resulting gain in expressive power is enormous.</p>
+<h2 id="funtion-decorators">Funtion Decorators</h2>
+<p>Python provides special syntax to apply higher-order functions as part of executing a <code>def</code> statement, called a decorator.</p>
+<p>Let's define a higher-order funtion <code>trace</code> which returns a function that precedes a call to its argument with a <code>print</code> statement that outputs the argument.</p>
+<pre><code class="language-python">def trace(fn):
+    def wrapped(x):
+        print('-&gt;', fn, '(', x, ')')
+        return fn
+    return wrapped
+
+@trace
+def square(x):
+    return x * x
+
+square(3)
+</code></pre>
+<p>Then we use <code>@trace</code> to mark the <code>def</code> statement <code>def square(x):</code>, which will change the execution rule for <code>def</code>.</p>
+<p>As usual, the function <code>triple</code> is created. However, the name <code>square</code> is not bound to this function.</p>
+<p>Instead, the name <code>square</code> is bound to the returned function value of calling <code>trace</code> on the newly defined <code>square</code> function.</p>
+<p>So this decorator will act equally to following code:</p>
+<pre><code class="language-python">def square(x):
+    return x * x
+square = trace(square)
+</code></pre>
+<p>The decorator symbol <code>@</code> may also be followed by a call expression.</p>
+<ul>
+<li>The expression following <code>@</code> is evaluated first (just as the name <code>trace</code> was evaluated above),</li>
+<li>the <code>def</code>statement second,</li>
+<li>and finally the result of evaluating the decorator expression is applied to the newly defined function, and the result is bound to the name in the <code>def</code> statement.</li>
+</ul>
+<p>A <a href="http://programmingbits.pythonblogs.com/27_programmingbits/archive/50_function_decorators.html">short tutorial on decorators</a> by Ariel Ortiz gives further examples for interested students.</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://Wang-jiahe-zju.github.io/post/function-4-or-note-for-cs61a/">
+              <span class="post-title">
+                Function 4 | Note for CS61A&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+          <script>
+          // 自动生成目录
+          (function() {
+            var toc = document.getElementById('toc');
+            if (!toc) return;
+            var content = document.querySelector('.post-content') || document.querySelector('.col-lg-9');
+            if (!content) return;
+            var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (hs.length === 0) return;
+            var ul = document.createElement('ul');
+            ul.className = 'toc-list';
+            var lastLevel = 1;
+            var parents = [ul];
+            hs.forEach(function(h, idx) {
+              var level = parseInt(h.tagName.substr(1));
+              var text = h.textContent;
+              var anchor = 'toc-' + idx;
+              h.id = anchor;
+              var li = document.createElement('li');
+              li.className = 'toc-level-' + level;
+              var a = document.createElement('a');
+              a.href = '#' + anchor;
+              a.textContent = text;
+              li.appendChild(a);
+              if (level > lastLevel) {
+                var newUl = document.createElement('ul');
+                parents[parents.length-1].lastElementChild.appendChild(newUl);
+                parents.push(newUl);
+              } else if (level < lastLevel) {
+                while (parents.length > 1 && lastLevel > level) {
+                  parents.pop();
+                  lastLevel--;
+                }
+              }
+              parents[parents.length-1].appendChild(li);
+              lastLevel = level;
+            });
+            toc.appendChild(ul);
+          })();
+            // KaTeX 自动渲染公式，修复乱码问题
+            document.addEventListener("DOMContentLoaded", function() {
+              if (window.renderMathInElement) {
+                renderMathInElement(document.querySelector('.post-content') || document.body, {
+                  delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                  ],
+                  throwOnError: false
+                });
+              }
+            });
+          </script>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://Wang-jiahe-zju.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Somnus&#39; Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

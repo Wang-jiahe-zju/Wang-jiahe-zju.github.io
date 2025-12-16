@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>Control Statement | Note for CS61A | Somnus&#39; Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://Wang-jiahe-zju.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://Wang-jiahe-zju.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="Control Statement | Note for CS61A | Somnus&#39; Blog » Feed" href="https://Wang-jiahe-zju.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://Wang-jiahe-zju.github.io/styles/main.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/typora-theme.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/custom.css" rel="stylesheet">
+    <!-- KaTeX 公式渲染支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/jquery.min.js"></script> -->
+  <script src="https://Wang-jiahe-zju.github.io/media/scripts/callout.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="Control Statement | Note for CS61A"/>
+    <meta property="og:url" content="https://Wang-jiahe-zju.github.io/post/control-statement-or-note-for-cs61a/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Somnus&#39; Blog"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://Wang-jiahe-zju.github.io">Somnus&#39; Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://Wang-jiahe-zju.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://Wang-jiahe-zju.github.io/tag/Adqr79Kbsp/" class="tag">CS61A</a>
+            
+        </span>
+            <h1>Control Statement | Note for CS61A</h1>
+            <span class="meta">
+            	Posted on
+              2025-10-28，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div id="toc" class="toc" style="position:sticky;top:100px;"></div>
+          </div>
+          <div class="col-lg-9 col-md-10 mx-auto">
+            <p>Control statements are statements that control the flow of a program's execution based on the results of logical comparisons.</p>
+<!-- more -->
+<h3 id="compound-statement">Compound Statement</h3>
+<img src="https://cdn.jsdelivr.net/gh/WangJiahe111/typora-pic-bed@master/20251027195659291.png" alt="image-20251027195659111" style="zoom:50%;" />
+<p>Compound statements typically span multiple lines</p>
+<ul>
+<li>start with a one-line <strong>header</strong> ending in a colon(<code>:</code>), which identifies the type of statement.</li>
+<li>Together, a header and an indented <strong>suite</strong> of statements is called a <strong>clause</strong>.</li>
+<li>A compound statement consists of one or more clauses:</li>
+</ul>
+<p>To execute a sequence of statements, execute the first statement. If that statement does not redirect control, then proceed to execute the rest of the sequence of statements, if any remain.</p>
+<h3 id="redirect-control">Redirect control</h3>
+<p>A return statement redirects control: the process of function application terminates whenever the first return statement is executed.</p>
+<h3 id="conditional-statements">Conditional Statements</h3>
+<p>A <strong>conditional statement</strong> in Python consists of a series of headers and suites: a required <code>if</code> clause, an optional sequence of <code>elif</code> clauses, and finally an optional <code>else</code> clause:</p>
+<pre><code class="language-python">if &lt;expression&gt;:
+	&lt;suite&gt;
+elif &lt;expression&gt;:
+	&lt;suite&gt;
+else:
+	&lt;suite&gt;
+</code></pre>
+<p>When executing a conditional statement, each clause is considered in order. The computational process of executing a conditional clause follows.</p>
+<ol>
+<li>Evaluate the header's expression.</li>
+<li>If it is a <strong>true</strong> value, execute the suite. Then, skip over <strong>all subsequent clauses</strong> in the conditional statement.</li>
+</ol>
+<p>Boolean contexts: Python includes several false values, <em>including <code>0</code>,<code> None</code>, and the boolean value <code>False</code>.</em> <strong>All other numbers are true values</strong> (<em>even the negative number like <code>-9</code> or <code>-0.9</code></em>).</p>
+<p><strong>Boolean operators</strong>. Three basic logical operators are also built into Python:<code>and</code>, <code>or</code>, <code>not</code></p>
+<p>Logical expressions have corresponding evaluation procedures. These procedures exploit the fact that the truth value of a</p>
+<p>logical expression can sometimes be determined without evaluating all of its subexpressions, a feature called <em>short-circuiting</em>.)</p>
+<blockquote>
+<p>To evaluate the expression <code>&lt;left&gt;</code> and <code>&lt;right&gt;</code>:</p>
+<ol>
+<li>
+<p>Evaluate the subexpression <code>&lt;left&gt;</code>.</p>
+</li>
+<li>
+<p>If the result is a false value v, <em>then the expression evaluates to v</em>.</p>
+</li>
+<li>
+<p>Otherwise, <em>the expression evaluates to the value of the subexpression</em> <code>&lt;right&gt;</code>.</p>
+</li>
+</ol>
+<p>To evaluate the expression <code>&lt;left&gt;</code> or <code>&lt;right&gt;</code>:</p>
+<ol>
+<li>
+<p>Evaluate the subexpression <code>&lt;left&gt;</code>.</p>
+</li>
+<li>
+<p>If the result is a true value v, <em>then the expression evaluates to v</em>.</p>
+</li>
+<li>
+<p>Otherwise, <em>the expression evaluates to the value of the subexpression</em> <code>&lt;right&gt;</code>.</p>
+</li>
+</ol>
+<p>To evaluate the expression not <code>&lt;exp&gt;</code>:</p>
+<ol>
+<li>Evaluate <code>&lt;exp&gt;</code>; The value is True if the result is a false value, and False otherwise.</li>
+</ol>
+<p>These values, rules, and operators provide us with a way to combine the results of comparisons.</p>
+</blockquote>
+<h3 id="iteration">Iteration</h3>
+<p>Iteration means <strong>repeat things</strong>.</p>
+<p>A while clause contains a header expression followed by a suite:</p>
+<pre><code class="language-python">while &lt;expression&gt;:
+  	&lt;suite&gt;
+</code></pre>
+<p>To execute a while clause:</p>
+<ol>
+<li>Evaluate the header's expression.</li>
+<li>If it is a true value, execute the suite, then return to step 1.</li>
+</ol>
+<p>In step 2, the entire suite of the while clause is executed <strong>before the header expression is evaluated again</strong>.</p>
+<p>A while statement that does not terminate is called an infinite loop. Press <code>&lt;Control&gt;-C</code> to force Python to stop looping.</p>
+<blockquote>
+<p><strong>Fibonacci numbers</strong>:</p>
+<p>Each value is constructed by repeatedly applying the sum-previous-two rule. The first and second are fixed to 0 and 1.</p>
+</blockquote>
+<pre><code class="language-python">def fib(n):
+	&quot;&quot;&quot;Compute the nth Fibonacci number, for n &gt;= 2.&quot;&quot;&quot;
+	pred, curr = 0, 1
+	k = 2
+	while(k&lt;n):
+		pred, curr = curr, curr + pred
+		k += 1
+	return curr
+
+res = fib(8)
+</code></pre>
+<blockquote>
+<p><strong>Prime Factorization</strong></p>
+<p>Each positive integer n has a set of prime factors: primes whose product is n. Such as:</p>
+<pre><code class="language-python">8 = 2 * 2 * 2
+9 = 3 * 3
+10 = 2 * 5
+11 = 11
+</code></pre>
+<p>One approach: Find the smallest prime factor of n, then divide by it</p>
+</blockquote>
+<pre><code class="language-python">def prime_factor(n):
+	&quot;&quot;&quot;listing the prime factors of n in non-decreasing order &quot;&quot;&quot;
+    while n &gt; 1:
+		k = smallest_prime_factor(n)
+		n = n // k
+		print(k)
+        
+def smallest_prime_factor(n):
+    &quot;&quot;&quot;return the smallest k &gt; 1 that evenly divides n&quot;&quot;&quot;
+    k = 2
+    while n % k != 0:
+        k += 1
+    return k
+</code></pre>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://Wang-jiahe-zju.github.io/post/functions-2-or-note-for-cs61a/">
+              <span class="post-title">
+                Functions 2 | Note for CS61A&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+          <script>
+          // 自动生成目录
+          (function() {
+            var toc = document.getElementById('toc');
+            if (!toc) return;
+            var content = document.querySelector('.post-content') || document.querySelector('.col-lg-9');
+            if (!content) return;
+            var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (hs.length === 0) return;
+            var ul = document.createElement('ul');
+            ul.className = 'toc-list';
+            var lastLevel = 1;
+            var parents = [ul];
+            hs.forEach(function(h, idx) {
+              var level = parseInt(h.tagName.substr(1));
+              var text = h.textContent;
+              var anchor = 'toc-' + idx;
+              h.id = anchor;
+              var li = document.createElement('li');
+              li.className = 'toc-level-' + level;
+              var a = document.createElement('a');
+              a.href = '#' + anchor;
+              a.textContent = text;
+              li.appendChild(a);
+              if (level > lastLevel) {
+                var newUl = document.createElement('ul');
+                parents[parents.length-1].lastElementChild.appendChild(newUl);
+                parents.push(newUl);
+              } else if (level < lastLevel) {
+                while (parents.length > 1 && lastLevel > level) {
+                  parents.pop();
+                  lastLevel--;
+                }
+              }
+              parents[parents.length-1].appendChild(li);
+              lastLevel = level;
+            });
+            toc.appendChild(ul);
+          })();
+            // KaTeX 自动渲染公式，修复乱码问题
+            document.addEventListener("DOMContentLoaded", function() {
+              if (window.renderMathInElement) {
+                renderMathInElement(document.querySelector('.post-content') || document.body, {
+                  delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                  ],
+                  throwOnError: false
+                });
+              }
+            });
+          </script>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://Wang-jiahe-zju.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Somnus&#39; Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

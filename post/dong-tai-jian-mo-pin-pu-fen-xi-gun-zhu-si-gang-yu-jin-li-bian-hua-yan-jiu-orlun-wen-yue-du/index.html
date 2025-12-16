@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>动态建模，频谱分析，滚珠丝杠预紧力变化研究｜论文阅读 | Somnus&#39; Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://Wang-jiahe-zju.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://Wang-jiahe-zju.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="动态建模，频谱分析，滚珠丝杠预紧力变化研究｜论文阅读 | Somnus&#39; Blog » Feed" href="https://Wang-jiahe-zju.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://Wang-jiahe-zju.github.io/styles/main.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/typora-theme.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/custom.css" rel="stylesheet">
+    <!-- KaTeX 公式渲染支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/jquery.min.js"></script> -->
+  <script src="https://Wang-jiahe-zju.github.io/media/scripts/callout.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="动态建模，频谱分析，滚珠丝杠预紧力变化研究｜论文阅读"/>
+    <meta property="og:url" content="https://Wang-jiahe-zju.github.io/post/dong-tai-jian-mo-pin-pu-fen-xi-gun-zhu-si-gang-yu-jin-li-bian-hua-yan-jiu-orlun-wen-yue-du/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Somnus&#39; Blog"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://Wang-jiahe-zju.github.io">Somnus&#39; Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://Wang-jiahe-zju.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://Wang-jiahe-zju.github.io/tag/I0AKTQAusw/" class="tag">论文阅读</a>
+            
+        </span>
+            <h1>动态建模，频谱分析，滚珠丝杠预紧力变化研究｜论文阅读</h1>
+            <span class="meta">
+            	Posted on
+              2025-11-01，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div id="toc" class="toc" style="position:sticky;top:100px;"></div>
+          </div>
+          <div class="col-lg-9 col-md-10 mx-auto">
+            <p>Investigation of ball screw preload variation based on dynamic modeling of a preload adjustable feed-drive system and spectrum analysis of ball-nuts sensed vibration signals</p>
+<!-- more -->
+<h1 id="论文阅读总结">📘 论文阅读总结</h1>
+<blockquote>
+<p><strong>文献信息</strong><br>
+作者：Guo-Hua Feng, Yi-Lu Pan<br>
+标题：<em>Investigation of ball screw preload variation based on dynamic modeling of a preload adjustable feed-drive system and spectrum analysis of ball-nuts sensed vibration signals</em><br>
+出处：<em>International Journal of Machine Tools &amp; Manufacture</em>, Vol. 52, pp. 85–96<br>
+年份：2012<br>
+DOI：10.1016/j.ijmachtools.2011.09.008</p>
+</blockquote>
+<hr>
+<h2 id="问题论文要解决什么问题">🧩 问题：论文要解决什么问题？</h2>
+<blockquote>
+<p>现有研究缺乏对**滚珠丝杠预紧力变化（preload variation）**的在线检测与诊断方法。<br>
+由于预紧力衰减会降低进给系统的刚度与精度，影响机床加工质量，因此本文旨在：</p>
+<ul>
+<li>建立滚珠丝杠预紧力可调进给系统的动力学模型；</li>
+<li>通过振动信号分析研究预紧力变化与系统响应的关系，实现<strong>滚珠丝杠健康状态的监测与诊断</strong>。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="️-核心方法">⚙️ 核心方法</h2>
+<blockquote>
+<p>构建基于<strong>可调预紧双螺母结构</strong>的滚珠丝杠进给系统，结合<strong>集总参数动力学建模</strong>与<strong>MEMS 加速度计振动测量</strong>，通过频谱分析与短时傅立叶变换（STFT）提取预紧力变化的特征频率，实现预紧状态识别。</p>
+</blockquote>
+<hr>
+<h2 id="创新点">💡 创新点</h2>
+<ol>
+<li>提出并实现了一种<strong>可调预紧的滚珠丝杠实验平台</strong>；</li>
+<li>建立了滚珠丝杠进给系统的<strong>集总动力学模型</strong>，并推导出预紧力变化对固有频率的影响；</li>
+<li>设计并嵌入<strong>MEMS 加速度传感器</strong>于螺母体内，实现了实时振动信号采集；</li>
+<li>通过<strong>频率峰值漂移与峰值幅值变化</strong>定量表征预紧力退化趋势；</li>
+<li>实验证明仿真与测量结果趋势一致，为滚珠丝杠在线健康监测提供了可行途径。</li>
+</ol>
+<hr>
+<h2 id="实验设计">🧪 实验设计</h2>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/WangJiahe111/typora-pic-bed@master/20251101183437763.png" alt="image-20251101183437605" loading="lazy"></figure>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>实验平台</strong></td>
+<td>单轴进给系统，采用改进型双螺母结构与碟形弹簧调节预紧力</td>
+</tr>
+<tr>
+<td><strong>电机/控制系统</strong></td>
+<td>Mitsubishi HC-SFS-102 电机，Pou-Yuen LMC-M310i-P 控制器</td>
+</tr>
+<tr>
+<td><strong>滚珠丝杠参数</strong></td>
+<td>螺距 16 mm，直径 16 mm（型号：SFS0-1610-2.8）</td>
+</tr>
+<tr>
+<td><strong>预紧设置</strong></td>
+<td>0.5%、3%、6%、9%、10% 动态载荷额定值（约 0.58–11.6 MN/m）</td>
+</tr>
+<tr>
+<td><strong>传感装置</strong></td>
+<td>MEMS 加速度计（ADXL321），安装于主/从螺母及工作台</td>
+</tr>
+<tr>
+<td><strong>信号采样</strong></td>
+<td>1 kHz 采样率，20,000 点采样；STFT 窗口长度 512</td>
+</tr>
+<tr>
+<td><strong>指标</strong></td>
+<td>特征频率、峰值幅度、RMS，加速度谱峰变化</td>
+</tr>
+<tr>
+<td><strong>仿真方法</strong></td>
+<td>集总参数模型 + 模态分析（4 自由度）</td>
+</tr>
+<tr>
+<td><strong>信号分析</strong></td>
+<td>STFT + FFT + 峰值归一化分析</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="主要结果">📊 主要结果</h2>
+<ul>
+<li>三个主要共振频率：142.6 Hz、362.1 Hz、747.9 Hz，对应系统的<strong>轴向一阶、二阶及扭转模态</strong>；</li>
+<li><strong>预紧力增大 → 特征频率上升，峰值功率增强</strong>；</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://cdn.jsdelivr.net/gh/WangJiahe111/typora-pic-bed@master/20251101183536540.png" alt="image-20251101183536433" loading="lazy"></figure>
+<ul>
+<li>当预紧力从 9% 降至 3% 时：
+<ul>
+<li>峰值频率下降约 <strong>5%</strong>；</li>
+<li>峰值功率下降约 <strong>9%</strong>；</li>
+</ul>
+</li>
+<li>仿真与实验的频率漂移趋势高度一致；</li>
+<li>STFT 结果显示在 300–400 Hz 范围内存在明显的能量峰移动，可作为<strong>预紧退化诊断指标</strong>；</li>
+<li>传感器安装位置影响信号强度：从螺母 &gt; 主螺母 &gt; 工作台。</li>
+</ul>
+<hr>
+<h2 id="优点-启示">🌟 优点 / 启示</h2>
+<blockquote>
+<p>💬 论文首次实现了<strong>滚珠丝杠预紧力变化的可视化与可测化</strong>，为机床进给系统健康监测提供了理论与实验依据。</p>
+</blockquote>
+<ul>
+<li>动力学模型简洁、物理意义清晰，可拓展至其他滚动传动副；</li>
+<li>嵌入式 MEMS 传感方案结构紧凑，适合智能机床应用；</li>
+<li>提供了基于<strong>特征频率漂移</strong>的在线诊断思路；</li>
+<li>实现了仿真–实验–信号处理三位一体的验证闭环。</li>
+</ul>
+<hr>
+<h2 id="️-局限-疑问">⚠️ 局限 / 疑问</h2>
+<blockquote>
+<p>❗ 虽然方法有效，但仍存在以下不足与改进空间：</p>
+</blockquote>
+<ol>
+<li>动力学模型采用集总参数形式，<strong>未考虑非线性摩擦与温升效应</strong>；</li>
+<li>预紧调节范围较窄（仅至额定载荷 10%），<strong>无法反映极端磨损状态</strong>；</li>
+<li>STFT 分析时频分辨率有限，<strong>未引入更高精度的时频算法（如HHT、CWT）</strong>；</li>
+<li>未讨论长期运行下的<strong>疲劳磨损累积效应</strong>；</li>
+<li>可进一步探索与<strong>机器学习诊断算法</strong>的结合，实现自动识别。</li>
+</ol>
+<hr>
+<h2 id="总结">总结</h2>
+<p>本文通过建立可调预紧滚珠丝杠系统与动力学模型，利用MEMS传感与频谱分析实现了预紧力变化的识别。结果表明，特征频率与功率幅值随预紧力变化规律一致，为滚珠丝杠健康监测提供了可靠依据。该方法对智能机床与自感知传动系统设计具有重要启示意义。</p>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://Wang-jiahe-zju.github.io/post/ji-jie-bi-de-kong-jian-miao-shu-yu-bian-huan-or-gong-ye-ji-qi-ren/">
+              <span class="post-title">
+                机械臂的空间描述与变换｜工业机器人&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+          <script>
+          // 自动生成目录
+          (function() {
+            var toc = document.getElementById('toc');
+            if (!toc) return;
+            var content = document.querySelector('.post-content') || document.querySelector('.col-lg-9');
+            if (!content) return;
+            var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (hs.length === 0) return;
+            var ul = document.createElement('ul');
+            ul.className = 'toc-list';
+            var lastLevel = 1;
+            var parents = [ul];
+            hs.forEach(function(h, idx) {
+              var level = parseInt(h.tagName.substr(1));
+              var text = h.textContent;
+              var anchor = 'toc-' + idx;
+              h.id = anchor;
+              var li = document.createElement('li');
+              li.className = 'toc-level-' + level;
+              var a = document.createElement('a');
+              a.href = '#' + anchor;
+              a.textContent = text;
+              li.appendChild(a);
+              if (level > lastLevel) {
+                var newUl = document.createElement('ul');
+                parents[parents.length-1].lastElementChild.appendChild(newUl);
+                parents.push(newUl);
+              } else if (level < lastLevel) {
+                while (parents.length > 1 && lastLevel > level) {
+                  parents.pop();
+                  lastLevel--;
+                }
+              }
+              parents[parents.length-1].appendChild(li);
+              lastLevel = level;
+            });
+            toc.appendChild(ul);
+          })();
+            // KaTeX 自动渲染公式，修复乱码问题
+            document.addEventListener("DOMContentLoaded", function() {
+              if (window.renderMathInElement) {
+                renderMathInElement(document.querySelector('.post-content') || document.body, {
+                  delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                  ],
+                  throwOnError: false
+                });
+              }
+            });
+          </script>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://Wang-jiahe-zju.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Somnus&#39; Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

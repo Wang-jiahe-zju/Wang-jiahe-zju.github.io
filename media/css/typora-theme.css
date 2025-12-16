@@ -1,0 +1,117 @@
+/* Typora 主题样式 */
+:root {
+    /* 文本颜色 */
+    --main-text-color: #091a3a;
+    --a-color: #4183C4;
+    --text-strong-color: #004ddb;
+    --text-em-color: #0052B5;
+    --mark-bg-color: #143673;
+
+    /* 标题颜色 */
+    --h1-4-text-color: #143673;
+    --h1-background-color: #e6eff9;
+    --header-lr-border-color: #143673;
+    --header-bottom-border-color: #a1adc9;
+    --h5-text-color: #143673;
+    --h6-text-color: #143673;
+
+    /* 表格颜色 */
+    --table-thead-bg-color: #EFF2F5;
+    --table-border-color: #BFCCD5;
+
+    /* 引用块颜色 */
+    --blockquote-bg-color: #f5f6f7;
+    --blockquote-decoration-color: #495057;
+
+    /* 代码颜色 */
+    --code-inline--color: #224F94;
+    --code-inline-bg-color: #B3BEC946;
+    --codeblock-bg-color: #E8F4FF;
+}
+
+/* 正文样式 */
+.post-content {
+    color: var(--main-text-color);
+    /* 公式和图片居中 */
+    .katex, .mathjax, img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* 链接样式 */
+.post-content a {
+    color: var(--a-color);
+}
+
+/* 标题样式 */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    color: var(--h1-4-text-color);
+}
+
+.post-content h1 {
+    background-color: var(--h1-background-color);
+    border-bottom: 1px solid var(--header-bottom-border-color);
+    padding: 0.5em;
+}
+
+.post-content h5,
+.post-content h6 {
+    color: var(--h5-text-color);
+}
+
+/* 引用块样式 */
+.post-content blockquote {
+    background-color: var(--blockquote-bg-color);
+    border-left: 4px solid var(--blockquote-decoration-color);
+    padding: 0.6em 1em;
+    margin: 0.8em 0;
+    color: var(--main-text-color);
+}
+
+/* 表格样式 */
+.post-content table {
+    border-collapse: collapse;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.post-content table th {
+    background-color: var(--table-thead-bg-color);
+}
+
+.post-content table,
+.post-content table th,
+.post-content table td {
+    border: 1px solid var(--table-border-color);
+}
+
+/* 代码样式 */
+.post-content code {
+    color: var(--code-inline--color);
+    background-color: var(--code-inline-bg-color);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.post-content pre code {
+    background-color: var(--codeblock-bg-color);
+    padding: 1em;
+    border-radius: 5px;
+    display: block;
+    overflow-x: auto;
+}
+
+/* 强调文本样式 */
+.post-content strong {
+    color: var(--text-strong-color);
+}
+
+.post-content em {
+    color: var(--text-em-color);
+}

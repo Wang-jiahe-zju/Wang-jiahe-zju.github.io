@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>Functions 3 | Note for CS61A | Somnus&#39; Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://Wang-jiahe-zju.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://Wang-jiahe-zju.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="Functions 3 | Note for CS61A | Somnus&#39; Blog » Feed" href="https://Wang-jiahe-zju.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://Wang-jiahe-zju.github.io/styles/main.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/typora-theme.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/custom.css" rel="stylesheet">
+    <!-- KaTeX 公式渲染支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/jquery.min.js"></script> -->
+  <script src="https://Wang-jiahe-zju.github.io/media/scripts/callout.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="Functions 3 | Note for CS61A"/>
+    <meta property="og:url" content="https://Wang-jiahe-zju.github.io/post/functions-3-or-note-for-cs61a/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Somnus&#39; Blog"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://Wang-jiahe-zju.github.io">Somnus&#39; Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://Wang-jiahe-zju.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://Wang-jiahe-zju.github.io/tag/Adqr79Kbsp/" class="tag">CS61A</a>
+            
+        </span>
+            <h1>Functions 3 | Note for CS61A</h1>
+            <span class="meta">
+            	Posted on
+              2025-10-28，7 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div id="toc" class="toc" style="position:sticky;top:100px;"></div>
+          </div>
+          <div class="col-lg-9 col-md-10 mx-auto">
+            <p>Higher-order functions, functions as arguements.</p>
+<!-- more -->
+<p>Functions that manipulate functions are called <strong>higher-order functions</strong>, which take functions as <strong>arguments</strong> or return functions as <strong>return</strong> values.</p>
+<ul>
+<li>
+<p>Express general methods of computation</p>
+</li>
+<li>
+<p>Remove repetition from programs</p>
+</li>
+<li>
+<p>Separate concerns among functions</p>
+</li>
+</ul>
+<h4 id="design-higher-order-functions">Design higher-order functions</h4>
+<p><em>Generalize Patterns with Arguments</em>(<strong>which may be functions</strong>). It's about <em>Generalization</em>!</p>
+<p>Finding common structure allows for shared implementation.</p>
+<p>Our environment model of how to evaluate a call expression extends gracefully to the case of higher-order functions, without change. When a user-defined function is applied to some arguments, <strong>the formal parameters are bound to the values of those arguments</strong> (again, <em>which may be functions</em>) in a new local frame.</p>
+<hr>
+<h4 id="functions-as-arguments">functions as arguments</h4>
+<p>See the example below.</p>
+<pre><code class="language-python">def summation(n, turn):
+    &quot;&quot;&quot;sum up to n with turn(n)
+    &gt;&gt;&gt; summation(3, square) # 1 + 4 + 9 = 14
+    14
+    &gt;&gt;&gt; summation(3, cube) # 1 + 8 + 27 = 36
+    36
+    &quot;&quot;&quot;
+    total, k = 0, 1
+    while k &lt;= n:
+        total += turn(k)
+        k += 1
+    return total
+
+def square(x):
+    return x*x
+
+def cube(x):
+    return x*x*x
+</code></pre>
+<p>Now we begin to see a more powerful kind of abstraction: some functions express <em>general methods of computation</em>, independent of the particular functions they call.</p>
+<hr>
+<p>There is great example named golden ratio.</p>
+<blockquote>
+<p>The [golden ratio, often called &quot;phi&quot;(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ϕ</span></span></span></span>), is a number near 1.6 that appears frequently in nature, art, and architecture.</p>
+<p>Among the well-known properties of the golden ratio, there are two:</p>
+<ul>
+<li>it can be computed by repeatedly summing the inverse of any positive number with 1</li>
+<li>it is one less than its square.</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>ϕ</mi><mi>n</mi></msub><mo>=</mo><mfrac><mn>1</mn><msub><mi>ϕ</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mtext>  </mtext><msub><mi>ϕ</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msup><mi>ϕ</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo>=</mo><mi>ϕ</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+\phi_n=\frac{1}{\phi_{n-1}}+1,\ \ \phi_1=1 \\
+\phi^2 -1 = \phi
+
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.039879em;vertical-align:-1.7699395em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.2699395em;"><span style="top:-4.2699394999999996em;"><span class="pstrut" style="height:3.32144em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">ϕ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">ϕ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.894331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault">ϕ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-2.2115005em;"><span class="pstrut" style="height:3.32144em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">ϕ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">ϕ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.7699395em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>And it also has an exact closed-form solution.</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow><mn>2</mn></mfrac><mo>≈</mo><mn>1.618</mn></mrow><annotation encoding="application/x-tex">\phi = \frac{1+\sqrt 5}2\approx 1.618
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ϕ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.27022em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5842200000000002em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord">2</span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.90722em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;">5</span></span><span style="top:-2.86722em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.13278em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">6</span><span class="mord">1</span><span class="mord">8</span></span></span></span></span></p>
+</blockquote>
+<p>We can create a <code>improve</code> function to do this kind of iterative improvement algorithm. Begin with a <code>guess</code> of a solution to an equation. It repeatedly applies an <code>update</code> function to improve that guess, and applies a <code>close</code> comparison to check whether the current <code>guess</code> is &quot;close enough&quot; to be considered correct.</p>
+<pre><code class="language-python">def improve(update, close, guess=1):
+    while not close(guess):
+        guess = update(guess)
+    return guess
+</code></pre>
+<p>According to the properties above, we can define the <code>golden_update</code> and <code>golden_close</code> functions.</p>
+<pre><code class="language-python">def golden_update(x):
+    return 1 / x +1
+
+def golden_close(x):
+    return close_enough(x, x**2-1)
+</code></pre>
+<p>Then we should define a <code>close_enough</code> fucntion to check if the value after iteration is close enough to the true value. We can use the arguments <code>tolerance</code> to decide whether two value is close enough.</p>
+<pre><code class="language-python">def close_enough(x, y, tolerance=1e-15):
+    return abs(x - y) &lt; tolerance
+</code></pre>
+<p>We can check if it's close enough to the true value.</p>
+<pre><code class="language-python">&gt;&gt;&gt; phi_iterate = improve(golden_update, golden_close)
+&gt;&gt;&gt; phi = (1 + math.sqrt(5)) / 2
+&gt;&gt;&gt; assert close_enough(phi, phi_iterate)
+</code></pre>
+<p>For this test, no news is good news: Python returns <code>None</code> after its <code>assert</code> statement is executed successfully.</p>
+<h4 id="nested-definitions">Nested definitions</h4>
+<p>Each general concept or equation maps onto its own short function. But it brings some  negative consequences</p>
+<ul>
+<li><strong>The global frame becomes cluttered with names of small functions</strong>, <em>which must all be unique</em>.</li>
+<li>Another problem is that we are constrained by <em>particular function signatures</em>: the <code>update</code> argument to <code>improve</code> must take exactly one argument.</li>
+</ul>
+<p>Nested function definitions address both of these problems, but require us to enrich our environment model.</p>
+<p>The solution to both of these issues is to place function definitions inside the body of other definitions. Like local assignment, local <code>def</code> statements only affect the current local frame.</p>
+<p>Let's consider a new problem: computing the square root of a number. In programming languages, &quot;square root&quot; is often abbreviated as <code>sqrt</code>. There are some properties too:</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msqrt><mi>a</mi></msqrt><msub><mo>)</mo><mi>n</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">g</mi></mrow><mrow><mo fence="true">[</mo><mo>(</mo><msqrt><mi>a</mi></msqrt><msub><mo>)</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mtext> </mtext><mfrac><mi>a</mi><mrow><mo>(</mo><msqrt><mi>a</mi></msqrt><msub><mo>)</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">(\sqrt a)_n = {\rm avg} \left [(\sqrt a)_{n-1},\ \frac{a}{(\sqrt a)_{n-1}} \right]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.099155em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491550000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="padding-left:0.833em;">a</span></span><span style="top:-2.809155em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.190845em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">a</span><span class="mord mathrm" style="margin-right:0.01389em;">v</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491550000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="padding-left:0.833em;">a</span></span><span style="top:-2.809155em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.190845em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.30972em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="padding-left:0.833em;">a</span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9402800000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span></p>
+<p>Let's see how can we do this iteration with function <code>improve</code> and  <code>close_enough</code> using nested definition:</p>
+<pre><code class="language-python">def avg(x, y):
+    return (x+y) / 2
+def sqrt(a):
+	def update(x):
+		return avg(x, a/x)
+    def close(x):
+        return close_enough(x * x, a)
+    return improve(update, close)
+</code></pre>
+<p>We can use names like <code>update</code> and <code>close</code> which are <em>more general</em> by using nested definition.</p>
+<p>By the way, the assert test goes right.</p>
+<pre><code class="language-python">&gt;&gt;&gt; assert close_enough(sqrt(10), math.sqrt(10))
+</code></pre>
+<p>Like local assignment, local <code>def</code> statements only affect the current local frame. These functions are only in scope while <code>sqrt</code> is being evaluated.</p>
+<p><strong>Lexical scope.</strong> Locally defined functions also have access to the name bindings in the scope in which they are defined.</p>
+<p>In this example, <code>update</code> refers to the name <code>a</code>, which is a formal parameter of its enclosing function <code>sqrt</code>. This discipline of sharing names among nested definitions is called <em>lexical scoping</em>. Critically, the inner functions have access to the names in the environment <em>where they are defined</em> (<em>not where they are called</em>).</p>
+<p>We require two extensions to our environment model to enable lexical scoping.</p>
+<ol>
+<li>Each user-defined function has a parent environment: <em>the environment in which it was defined</em>.</li>
+<li>When a user-defined function is called, <em>its local frame extends its parent environment</em>.</li>
+</ol>
+<p>Functions defined within other function bodies are bound to names in a local frame.</p>
+<p>Function values each have a new annotation that we will include in environment diagrams from now on, a <em>parent</em>.</p>
+<p>The parent of a function value is <em>the first frame</em> <strong>of the environment in which that function was defined.</strong></p>
+<p>When a user-defined function is called, the frame created has the <strong>same parent as that function</strong>.</p>
+<p><strong>Extended Environments</strong>. An environment can consist of an arbitrarily long chain of frames, which always concludes with the global frame.</p>
+<p>Hence, we realize two key advantages of lexical scoping in Python.</p>
+<ul>
+<li>The names of a local function do not interfere with names external to the function in which it is defined, because the local function name will be bound in the current local environment in which it was defined, rather than the global environment.</li>
+<li>A local function can access the environment of the enclosing function, because the body of the local function is evaluated in an environment that extends the evaluation environment in which it was defined.</li>
+</ul>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://Wang-jiahe-zju.github.io/post/control-statement-or-note-for-cs61a/">
+              <span class="post-title">
+                Control Statement | Note for CS61A&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+          <script>
+          // 自动生成目录
+          (function() {
+            var toc = document.getElementById('toc');
+            if (!toc) return;
+            var content = document.querySelector('.post-content') || document.querySelector('.col-lg-9');
+            if (!content) return;
+            var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (hs.length === 0) return;
+            var ul = document.createElement('ul');
+            ul.className = 'toc-list';
+            var lastLevel = 1;
+            var parents = [ul];
+            hs.forEach(function(h, idx) {
+              var level = parseInt(h.tagName.substr(1));
+              var text = h.textContent;
+              var anchor = 'toc-' + idx;
+              h.id = anchor;
+              var li = document.createElement('li');
+              li.className = 'toc-level-' + level;
+              var a = document.createElement('a');
+              a.href = '#' + anchor;
+              a.textContent = text;
+              li.appendChild(a);
+              if (level > lastLevel) {
+                var newUl = document.createElement('ul');
+                parents[parents.length-1].lastElementChild.appendChild(newUl);
+                parents.push(newUl);
+              } else if (level < lastLevel) {
+                while (parents.length > 1 && lastLevel > level) {
+                  parents.pop();
+                  lastLevel--;
+                }
+              }
+              parents[parents.length-1].appendChild(li);
+              lastLevel = level;
+            });
+            toc.appendChild(ul);
+          })();
+            // KaTeX 自动渲染公式，修复乱码问题
+            document.addEventListener("DOMContentLoaded", function() {
+              if (window.renderMathInElement) {
+                renderMathInElement(document.querySelector('.post-content') || document.body, {
+                  delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                  ],
+                  throwOnError: false
+                });
+              }
+            });
+          </script>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://Wang-jiahe-zju.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Somnus&#39; Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+

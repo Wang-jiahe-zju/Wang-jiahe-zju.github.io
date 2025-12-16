@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>Terminal(Mac) | Note for CS61A | Somnus&#39; Blog</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://Wang-jiahe-zju.github.io/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://Wang-jiahe-zju.github.io/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="Terminal(Mac) | Note for CS61A | Somnus&#39; Blog » Feed" href="https://Wang-jiahe-zju.github.io/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://Wang-jiahe-zju.github.io/styles/main.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/typora-theme.css" rel="stylesheet">
+  <link href="https://Wang-jiahe-zju.github.io/media/css/custom.css" rel="stylesheet">
+    <!-- KaTeX 公式渲染支持 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/jquery.min.js"></script> -->
+  <script src="https://Wang-jiahe-zju.github.io/media/scripts/callout.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <meta property="og:description" content="Terminal(Mac) | Note for CS61A"/>
+    <meta property="og:url" content="https://Wang-jiahe-zju.github.io/post/terminalmac-or-note-for-cs61a/"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Somnus&#39; Blog"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://Wang-jiahe-zju.github.io">Somnus&#39; Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://Wang-jiahe-zju.github.io/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://Wang-jiahe-zju.github.io/tag/Adqr79Kbsp/" class="tag">CS61A</a>
+            
+        </span>
+            <h1>Terminal(Mac) | Note for CS61A</h1>
+            <span class="meta">
+            	Posted on
+              2025-10-26，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div id="toc" class="toc" style="position:sticky;top:100px;"></div>
+          </div>
+          <div class="col-lg-9 col-md-10 mx-auto">
+            <p>Usage for Terminal in MacOS</p>
+<!-- more -->
+<h2 id="file-system-and-directory">File system and Directory</h2>
+<h3 id="path">Path</h3>
+<p><strong>absolute path</strong>: uniquely identifies a specific file or folder within the computer.</p>
+<p><strong>relative path</strong>:which identifies a location on the computer <em>relative</em> to some <strong>working directory</strong></p>
+<p>On Mac/Linux, a path starting with a slash(<code>/</code>) is an absolute path (such as <code>/syllabus.pdf</code>), while a relative path never starts with a <code>/</code>.</p>
+<hr>
+<p>A <strong>directory</strong> is another name for a folder.</p>
+<p><strong>Woking directory:</strong> Your terminal is always open with a folder, the folder where terminal now at is called working directory.</p>
+<p><strong>Home directory</strong>: When you first open your terminal, you will start in the &quot;home directory&quot;. This is the default <strong>working directory</strong> for your terminal. The <strong>home directory</strong> is represented by the <code>~</code> symbol.</p>
+<p>You can see absolute path to your working directory by running the command <strong><code>pwd</code></strong> .</p>
+<h3 id="directory">Directory</h3>
+<p>My home directory:</p>
+<pre><code>/Users/wjh
+</code></pre>
+<p>You can use the commands <strong><code>python3</code></strong> to launches a Python interpreter.</p>
+<p>You should see some text printed out about the interpreter followed by <code>&gt;&gt;&gt;</code> on its own line. <strong>This is where you can type in Python code.</strong> You can type <strong><code>exit()</code></strong> or <strong><code>Control-D</code></strong> (shortcut in keyboard) to return to the command line.</p>
+<h4 id="organizing-files">Organizing files</h4>
+<blockquote>
+<p>[!NOTE]</p>
+<p>Summary</p>
+<ul>
+<li><code>ls</code>: <strong>l</strong>i<strong>s</strong>ts all files in the current directory</li>
+<li><code>cd &lt;path to directory&gt;</code>: <strong>c</strong>hange into the specified <strong>d</strong>irectory</li>
+<li><code>mkdir &lt;directory name&gt;</code>: <strong>m</strong>a<strong>k</strong>es a new <strong>dir</strong>ectory with the given name</li>
+<li><code>mv &lt;path to source&gt; &lt;path to destination&gt;</code>: <strong>m</strong>o<strong>v</strong>es the source file/directory into the destination directory</li>
+</ul>
+</blockquote>
+<p>The <strong><code>ls</code></strong> command (which stands for <strong>l</strong>i<strong>s</strong>t) lists all the files and folders in the current working directory.</p>
+<p>Use the <strong><code>cd</code></strong> command (which stands for <strong>c</strong>hange <strong>d</strong>irectory) to move into another directory.</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>There are a few ways to return to the home directory:</p>
+<ul>
+<li><code>cd ..</code> (two dots). The <code>..</code> means &quot;the parent directory&quot;, or <strong>one directory above your current directory.</strong></li>
+<li><code>cd ~</code> (the tilde). Remember <strong>that <code>~</code> means home directory</strong>, so this command will always change to your home directory.</li>
+<li><code>cd</code> (<code>cd</code> on its own). Typing just <code>cd</code> is a shortcut for typing <code>cd ~</code>.</li>
+</ul>
+</blockquote>
+<p>The <strong><code>mkdir</code></strong> command (<strong>m</strong>a<strong>k</strong>e a new <strong>dir</strong>ectory) takes in a name as input and creates a new directory with that name. The new directory is stored in the current working directory.</p>
+<p>The <strong><code>unzip</code></strong> command with the name of the zip file can unzip the file.</p>
+<p><strong>M</strong>o<strong>v</strong>e files using the <strong><code>mv</code></strong> terminal command:</p>
+<pre><code class="language-zsh">mv ~/Downloads/lab00 ~/Desktop/cs61a/lab
+</code></pre>
+<p>The above command will move the <code>~/Downloads/lab00</code> folder into the <code>~/Desktop/cs61a/lab</code> folder.</p>
+<h2 id="python-in-termial">Python in termial</h2>
+<p>When running a Python file, you can use options on the command line to inspect your code further. Here are a few that will come in handy. If you want to learn more about other Python command-line options, take a look at the <a href="https://docs.python.org/3.4/using/cmdline.html">documentation</a><mark>unread</mark>.</p>
+<p>Using no command-line options will run the code in the file you provide and return you to the command line.</p>
+<pre><code class="language-zsh">python3 
+</code></pre>
+<hr>
+<p><strong><code>-i</code></strong>: The <code>-i</code> option runs your Python script, then opens an <em>interactive session</em>. In an interactive session, you run Python code line by line and get immediate feedback instead of running an entire file all at once. To exit, type <code>exit()</code> into the interpreter prompt. You can also use the keyboard shortcut <code>Ctrl-D</code> on Linux/Mac machines.</p>
+<p>If you edit the Python file while running it interactively, you will need to exit and restart the interpreter in order for those changes to take effect.</p>
+<pre><code class="language-zsh">python3 -i 
+</code></pre>
+<hr>
+<p><code>-m doctest</code>: Runs doctests in a particular file. Doctests are surrounded by triple quotes (<code>&quot;&quot;&quot;</code>) within functions.</p>
+<p>Each test in the file consists of <code>&gt;&gt;&gt;</code> followed by some Python code and the expected output (though the <code>&gt;&gt;&gt;</code> are not seen in the output of the doctest command).</p>
+<p>Add <code>-v</code> to see more details</p>
+<pre><code class="language-zsh"> python3 -m doctest &lt;python_source_file&gt;
+ python3 -m doctest -v &lt;python_source_file&gt;
+</code></pre>
+
+          
+          <p class="next-post">下一篇：
+            <a href="https://Wang-jiahe-zju.github.io/post/expressions-and-names-or-note-for-cs61a/">
+              <span class="post-title">
+                Expressions and Names | Note for CS61A&rarr;
+              </span>
+            </a>
+          </p>
+        
+        <div class="comment">
+          
+        </div>
+          <script>
+          // 自动生成目录
+          (function() {
+            var toc = document.getElementById('toc');
+            if (!toc) return;
+            var content = document.querySelector('.post-content') || document.querySelector('.col-lg-9');
+            if (!content) return;
+            var hs = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (hs.length === 0) return;
+            var ul = document.createElement('ul');
+            ul.className = 'toc-list';
+            var lastLevel = 1;
+            var parents = [ul];
+            hs.forEach(function(h, idx) {
+              var level = parseInt(h.tagName.substr(1));
+              var text = h.textContent;
+              var anchor = 'toc-' + idx;
+              h.id = anchor;
+              var li = document.createElement('li');
+              li.className = 'toc-level-' + level;
+              var a = document.createElement('a');
+              a.href = '#' + anchor;
+              a.textContent = text;
+              li.appendChild(a);
+              if (level > lastLevel) {
+                var newUl = document.createElement('ul');
+                parents[parents.length-1].lastElementChild.appendChild(newUl);
+                parents.push(newUl);
+              } else if (level < lastLevel) {
+                while (parents.length > 1 && lastLevel > level) {
+                  parents.pop();
+                  lastLevel--;
+                }
+              }
+              parents[parents.length-1].appendChild(li);
+              lastLevel = level;
+            });
+            toc.appendChild(ul);
+          })();
+            // KaTeX 自动渲染公式，修复乱码问题
+            document.addEventListener("DOMContentLoaded", function() {
+              if (window.renderMathInElement) {
+                renderMathInElement(document.querySelector('.post-content') || document.body, {
+                  delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                  ],
+                  throwOnError: false
+                });
+              }
+            });
+          </script>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://Wang-jiahe-zju.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Somnus&#39; Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://Wang-jiahe-zju.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
+</html>
+
